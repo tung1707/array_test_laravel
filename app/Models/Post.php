@@ -10,18 +10,24 @@ class Post extends Model
 {
     use HasFactory;
     protected $table = 'post';
-    protected $fillable =[
+    protected $fillable = [
         'taginfo'
     ];
-
+    /*
     protected $casts = [
         'taginfo' =>'array'
     ];
+*/
 
+    public function getall()
+    {
+        
+    }
+    
     public function insertpost($taginfo)
     {
         $data = Post::create([
-            'taginfo'=> $taginfo
+            'taginfo' => $taginfo
         ]);
 
         //DB::table();

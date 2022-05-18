@@ -44,14 +44,14 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
-
-        $taginfo = $request->tagid;
-        $data = [];
+        $tagid = json_encode($request->tagid);
+        $data = "";
+        //foreach($taginfo)
         //lay value roi
        // DB::table('tag')->where('id', $tag)
-        $i = 0;
+        /*
         foreach ($taginfo as $tag) {
-            var_dump(DB::table('tag')
+            /*var_dump(DB::table('tag')
             ->where('id', $tag)
             ->select('*')
             ->get());
@@ -73,11 +73,11 @@ class PostController extends Controller
            ->where('id', $tag)
            ->select('id as tagid', 'content as tagcontent', 'colorcode')
            ->get()     ;
-           */
+           
            //dd("abdbs");
         }
-        
-        return $data;
+        */
+        return $this->post->insertpost($tagid)->save();
     }
 
     /**
